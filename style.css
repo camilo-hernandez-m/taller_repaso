@@ -1,13 +1,21 @@
-.img{
-    display: block;
-    margin: 0 auto;
-}
+
 input[type="text"]{
     display: block;
 }
 input[type="submit"]{
     display: block;
-    margin-top: 10px;
+    margin-top: 30px;
+    background-color: #d85f0e;
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 10%;
+    transition: .5s ease-in-out all;
+    border-radius: 3px;
+    transform-origin: center;
+    transform: scale(3);  
 }
 table thead tr{
     background: #fe8737;
@@ -26,4 +34,7 @@ table tbody tr:nth-child(2n+1){
 }
 table tbody tr:nth-child(2n){
     background: #ffeee7;
+}
+body{
+    background: rgba(223, 23, 23, 0.514);
 }
