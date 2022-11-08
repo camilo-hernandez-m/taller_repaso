@@ -1,40 +1,32 @@
-addEventListener("DOMContentLoaded", (e)=>{
-    let hor2=document.querySelector('#elint')
-    let cont=1
-    hor2.addEventListener("submit",(e)=>{
-        e.preventDefault();
-        if (cont<=50){
-        let datosEntrada = Object.fromEntries(new FormData(e.target))
-            let hor = datosEntrada.nhoras
-            let valh =5208.33
-            let pgh= valh*hor
+addEventListener("DOMContentLoaded",(e)=>{
+
+
+
+    let n = document.querySelector("#N")
+    let resultado = ""
+    let numeros = document.querySelector("#numeros")
+    let suma = 0
+    let res= document.querySelector("#resultados")
     
-            let tabla=document.querySelector("tbody");
-            tabla.insertAdjacentHTML("beforeend",`
-            <tr>
-                <td>${cont}</td>
-                <td>${hor}</td>
-                <td>${valh}</td>
-                <td>${pgh}</td>
-            </tr>
-                `)
-                cont++
+    numeros.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let datosEntrada = Object.fromEntries(new FormData(e.target));
+        for (let s = 1; s < datosEntrada.N; s++){
+            if(datosEntrada.N % s == 0){
+                suma+=s
             }
+        }
+        if(datosEntrada.N == suma){
+            resultado = "Es perfecto"
+            suma = 0
+        }
+        else{
+            resultado = "No es perfecto"
+            suma = 0
+        }
+        res.innerHTML = ""
+        res.insertAdjacentHTML("beforeend",`
+        <h2> ${datosEntrada.N + ' ' + resultado} </h2>
+        `);
         })
     })
-    
-    const c = document.querySelector(".container");
-    const b = document.querySelector("button");
-    
-    function change(e) {
-      const
-        { width: cWidth, height: cHeight } = c.getBoundingClientRect(),
-        { width: bWidth, height: bHeight } = b.getBoundingClientRect(),
-        i = Math.floor(Math.random() * (cWidth - bWidth)) + 1,
-        j = Math.floor(Math.random() * (cHeight - bHeight)) + 1;
-    
-      b.style.left = i + "px";
-      b.style.top = j + "px";
-    }
-    
-    b.addEventListener("click", change);

@@ -4,48 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
     <title>Document</title>
-    <script>
-        function accionParaCuandoEllaDigaQueSi(){
-            alert('ahora ya somos nobios <3');
-        }
-
-        function mueveElBoton(){
-            width = window.innerWidth;
-            height = window.innerHeight;
-
-            newWidth = (Math.random() * width);
-            newHeight = (Math.random() * height);
-
-            document.getElementById('btnNo').style.position = "absolute";
-            document.getElementById('btnNo').style.left = newWidth + "px";
-            document.getElementById('btnNo').style.top = newHeight + "px";
-        }
-    </script>
+    <link rel="stylesheet" href="style3.css">
+    <script src="main3.js"></script>
 </head>
 <body>
-    
-    <h2>DESARROLLE UN ALGORITMO PARA LA EMPRESA CONSTRUCTORA TECNOVIVIR CASAS C.A., QUE LE PERMITA CALCULAR E IMPRIMIR LA NOMINA PARA SU CANCELACION A UN TOTAL DE 50 OBREROS CALIFICADOS A QUIENES DEBE CANCELAR POR HORAS TRABAJADAS. LA HORA TRABAJADA SE PAUTA EN 5,208.33</h2>    
-<form id="elint">
-    <input type="number"  name="nhoras" placeholder="#horas de trabajo">
-    <input type="submit" value="enviar">
-    <input type="submit" id="btnNo" onmouseover="mueveElBoton()" value="enviar" />
-</form>
-<table>
-    <thead>
-        <tr>
-            <th>TRABAJOR # </th>
-            <th>HORAS TRABAJADAS</th>
-            <th>VALOR DE HORAS</th>
-            <th>VALOR TOTAL </th>
-        </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
+    <h2>Dados dos números enteros positivos N y D, se dice que D es un divisor de N si el resto de
+        dividir N entre D es 0. Se dice que un número N es perfecto si la suma de sus divisores
+        (excluido el propio N) es N. Por ejemplo 28 es perfecto, pues sus divisores (excluido elv28)
+        son: 1, 2, 4, 7 y 14 y su suma es 1+2+4+7+14=28. Hacer un organigrama que dado un
+        número N nos diga si es o no perfecto.</h2>   
+        <form id="numeros" method="get">
+            <input type="number"  name="N" id="n"> 
+            <input type="submit" value="enviar">
+            </form>
+            <div id="resultados"></div>
+  
 
 </body>
 </html>
